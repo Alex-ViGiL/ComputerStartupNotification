@@ -1,0 +1,12 @@
+C:\Users\aleks\source\repos\Curs\Curs\bin\Release\Curs.exe.config
+C:\Users\aleks\source\repos\Curs\Curs\bin\Release\Curs.exe
+C:\Users\aleks\source\repos\Curs\Curs\bin\Release\Curs.pdb
+C:\Users\aleks\source\repos\Curs\Curs\obj\Release\Curs.Form1.resources
+C:\Users\aleks\source\repos\Curs\Curs\obj\Release\Curs.Properties.Resources.resources
+C:\Users\aleks\source\repos\Curs\Curs\obj\Release\Curs.csproj.GenerateResource.cache
+C:\Users\aleks\source\repos\Curs\Curs\obj\Release\Curs.csproj.CoreCompileInputs.cache
+C:\Users\aleks\source\repos\Curs\Curs\obj\Release\Curs.exe
+C:\Users\aleks\source\repos\Curs\Curs\obj\Release\Curs.pdb
+C:\Users\aleks\source\repos\Curs\Curs\bin\Release\Email.txt
+C:\Users\aleks\source\repos\Curs\Curs\obj\Release\Curs.csproj.AssemblyReference.cache
+C:\Users\aleks\source\repos\Curs\Curs\bin\Release\Info.txt
