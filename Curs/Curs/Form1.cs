@@ -19,7 +19,7 @@ namespace Curs
     public partial class Form1 : Form
     {
 
-       static string pathDirectory = @"C:\Users\aleks\ComputerStartupNotificationSavesInfo";
+       static string pathDirectory = $@"C:\Users\{SystemInformation.UserName}\ComputerStartupNotificationSavesInfo";
        string pathEmail = pathDirectory + "\\Email.txt";
        string pathInfo = pathDirectory + "\\Info.txt";
         public Form1()
