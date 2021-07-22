@@ -1,42 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Globalization;
+﻿using Microsoft.Win32;
+using System;
 using System.IO;
-using System.Net.Mail;
 using System.Net;
-using Microsoft.Win32;
+using System.Net.Mail;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace Curs
 {
     public partial class Form1 : Form
     {
 
-       static string pathDirectory = $@"C:\Users\{SystemInformation.UserName}\ComputerStartupNotificationSavesInfo";
-       string pathEmail = pathDirectory + "\\Email.txt";
-       string pathInfo = pathDirectory + "\\Info.txt";
+        static string pathDirectory = $@"C:\Users\{SystemInformation.UserName}\ComputerStartupNotificationSavesInfo";
+        string pathEmail = pathDirectory + "\\Email.txt";
+        string pathInfo = pathDirectory + "\\Info.txt";
         public Form1()
         {
-            InitializeComponent();     
+            InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             //Create directory
-           
-            if (!Directory.Exists(pathDirectory)) 
+
+            if (!Directory.Exists(pathDirectory))
             {
                 Directory.CreateDirectory(pathDirectory);
             }
 
             //Create file
-            if (!File.Exists(pathDirectory+"\\Email.txt"))
+            if (!File.Exists(pathDirectory + "\\Email.txt"))
             {
                 File.Create(pathDirectory + "\\Email.txt");
             }
@@ -46,11 +38,11 @@ namespace Curs
                 File.Create(pathDirectory + "\\Info.txt");
             }
 
-            
+
             //Email       
             try
             {
-               
+
                 using (StreamReader sr = new StreamReader(pathEmail))
                 {
                     textBox1.Text = sr.ReadToEnd();
@@ -67,10 +59,10 @@ namespace Curs
             label5.Text = Convert.ToString(SystemInformation.UserName);
             label6.Text = Convert.ToString(Environment.MachineName);
 
-         
+
             try
             {
-                
+
                 using (StreamReader sr = new StreamReader(pathInfo))
                 {
                     string Text = "";
@@ -128,7 +120,7 @@ namespace Curs
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 using (StreamWriter sw = new StreamWriter(pathEmail, false, System.Text.Encoding.Default))
