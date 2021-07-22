@@ -9,3 +9,15 @@ C:\Users\aleks\source\repos\Curs\Curs\obj\Debug\Curs.exe
 C:\Users\aleks\source\repos\Curs\Curs\obj\Debug\Curs.pdb
 C:\Users\aleks\source\repos\Curs\Curs\bin\Debug\Email.txt
 C:\Users\aleks\source\repos\Curs\Curs\bin\Debug\Info.txt
+D:\Git\ComputerStartupNotification\Curs\Curs\bin\Debug\Email.txt
+D:\Git\ComputerStartupNotification\Curs\Curs\bin\Debug\Info.txt
+D:\Git\ComputerStartupNotification\Curs\Curs\bin\Debug\Curs.exe.config
+D:\Git\ComputerStartupNotification\Curs\Curs\bin\Debug\Curs.exe
+D:\Git\ComputerStartupNotification\Curs\Curs\bin\Debug\Curs.pdb
+D:\Git\ComputerStartupNotification\Curs\Curs\obj\Debug\Curs.csproj.AssemblyReference.cache
+D:\Git\ComputerStartupNotification\Curs\Curs\obj\Debug\Curs.Form1.resources
+D:\Git\ComputerStartupNotification\Curs\Curs\obj\Debug\Curs.Properties.Resources.resources
+D:\Git\ComputerStartupNotification\Curs\Curs\obj\Debug\Curs.csproj.GenerateResource.cache
+D:\Git\ComputerStartupNotification\Curs\Curs\obj\Debug\Curs.csproj.CoreCompileInputs.cache
+D:\Git\ComputerStartupNotification\Curs\Curs\obj\Debug\Curs.exe
+D:\Git\ComputerStartupNotification\Curs\Curs\obj\Debug\Curs.pdb

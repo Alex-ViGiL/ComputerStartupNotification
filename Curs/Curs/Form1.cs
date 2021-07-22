@@ -18,18 +18,39 @@ namespace Curs
 {
     public partial class Form1 : Form
     {
-        string pathEmail = "Email.txt";
+
+       static string pathDirectory = @"C:\Users\aleks\ComputerStartupNotificationSavesInfo";
+       string pathEmail = pathDirectory + "\\Email.txt";
+       string pathInfo = pathDirectory + "\\Info.txt";
         public Form1()
         {
             InitializeComponent();     
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Create directory
+           
+            if (!Directory.Exists(pathDirectory)) 
+            {
+                Directory.CreateDirectory(pathDirectory);
+            }
 
-            SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
-            //Email
+            //Create file
+            if (!File.Exists(pathDirectory+"\\Email.txt"))
+            {
+                File.Create(pathDirectory + "\\Email.txt");
+            }
+
+            if (!File.Exists(pathDirectory + "\\Info.txt"))
+            {
+                File.Create(pathDirectory + "\\Info.txt");
+            }
+
+            
+            //Email       
             try
             {
+               
                 using (StreamReader sr = new StreamReader(pathEmail))
                 {
                     textBox1.Text = sr.ReadToEnd();
@@ -46,11 +67,11 @@ namespace Curs
             label5.Text = Convert.ToString(SystemInformation.UserName);
             label6.Text = Convert.ToString(Environment.MachineName);
 
-            string writePath = "Info.txt";
-
+         
             try
             {
-                using (StreamReader sr = new StreamReader(writePath))
+                
+                using (StreamReader sr = new StreamReader(pathInfo))
                 {
                     string Text = "";
                     foreach (char Symbol in sr.ReadToEnd())
@@ -99,14 +120,15 @@ namespace Curs
             }
             catch (Exception)
             {
-                MessageBox.Show("Для решения данной проблемі нужно включить разрешение на сайте : https://myaccount.google.com/lesssecureapps");
+                MessageBox.Show("Для решения данной проблемы нужно включить разрешение на сайте : https://myaccount.google.com/lesssecureapps");
                 throw;
             }
-
+            SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 using (StreamWriter sw = new StreamWriter(pathEmail, false, System.Text.Encoding.Default))

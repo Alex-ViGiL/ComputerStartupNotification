@@ -10,7 +10,8 @@ namespace Curs
     {
        public Information(DateTime info) 
         {
-            string writePath = "Info.txt";
+            string pathDirectory = @"C:\Users\aleks\ComputerStartupNotificationSavesInfo";
+            string writePath = pathDirectory + "\\Info.txt";
             string DateTime = Convert.ToString(info) + "&";
 
             try
