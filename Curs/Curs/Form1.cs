@@ -54,8 +54,7 @@ namespace Curs
             }
 
 
-            DateTime info = DateTime.Now;
-            Information information = new Information(info);
+          
             label5.Text = Convert.ToString(SystemInformation.UserName);
             label6.Text = Convert.ToString(Environment.MachineName);
 
@@ -86,53 +85,11 @@ namespace Curs
                 throw;
             }
 
-
-            try
-            {
-                if (textBox1.Text != "")
-                {
-                    MailAddress from = new MailAddress("botmessage0@gmail.com", "Bot");
-
-                    MailAddress to = new MailAddress(textBox1.Text);
-
-                    MailMessage m = new MailMessage(from, to);
-
-                    m.Subject = "Включение компютера";
-
-                    m.Body = $"<h2> Здравствуйте {SystemInformation.UserName} ваш пк был только что включён \n {info}</h2>";
-
-                    m.IsBodyHtml = true;
-
-                    SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-
-                    smtp.Credentials = new NetworkCredential("botmessage0@gmail.com", "smsbot12345");
-                    smtp.EnableSsl = true;
-                    smtp.Send(m);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Для решения данной проблемы нужно включить разрешение на сайте : https://myaccount.google.com/lesssecureapps");
-                throw;
-            }
-            SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
+            SendEmail();
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                using (StreamWriter sw = new StreamWriter(pathEmail, false, System.Text.Encoding.Default))
-                {
-                    sw.WriteLine(textBox1.Text);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+      
 
         private bool SetAutoRunValue(bool autorun, string path)
         {
@@ -163,5 +120,55 @@ namespace Curs
             return true;
         }
 
+        private void SaveEmail(object sender, EventArgs e)
+        {
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(pathEmail, false, System.Text.Encoding.Default))
+                {
+                    sw.WriteLine(textBox1.Text);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void SendEmail() 
+        {
+            DateTime info = DateTime.Now;
+            Information information = new Information(info);
+            try
+            {
+                if (textBox1.Text != "")
+                {
+                    MailAddress from = new MailAddress("botmessage0@gmail.com", "Bot");
+
+                    MailAddress to = new MailAddress(textBox1.Text);
+
+                    MailMessage m = new MailMessage(from, to);
+
+                    m.Subject = "Включение компютера";
+
+                    m.Body = $"<h2> Здравствуйте {SystemInformation.UserName} ваш пк был только что включён \n {info}</h2>";
+
+                    m.IsBodyHtml = true;
+
+                    SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+
+                    smtp.Credentials = new NetworkCredential("botmessage0@gmail.com", "smsbot12345");
+                    smtp.EnableSsl = true;
+                    smtp.Send(m);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Для решения данной проблемы нужно включить разрешение на сайте : https://myaccount.google.com/lesssecureapps");
+                throw;
+            }
+            SetAutoRunValue(true, Assembly.GetExecutingAssembly().Location);
+
+        }
     }
 }
